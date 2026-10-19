@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram id="community-aid" name="UML Class Diagram">
+    <mxGraphModel dx="2200" dy="1800" grid="1" gridSize="10" page="1" pageWidth="2200" pageHeight="1800">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Community Aid Management System" style="text;html=1;fontSize=36;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="30" width="1800" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Household" value="Household" style="swimlane;html=1;startSize=65;fontSize=30;fontStyle=1;fillColor=#dfedf4;swimlaneFillColor=#f8fbfd;strokeColor=#284a5f;" vertex="1" parent="1">
+          <mxGeometry x="60" y="160" width="620" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="HouseholdAttrs" value="- householdId: String&lt;br&gt;- contactName: String&lt;br&gt;- phoneNumber: String&lt;br&gt;- area: String&lt;br&gt;- memberCount: Integer" style="text;html=1;align=left;verticalAlign=top;spacing=18;fontFamily=Consolas;fontSize=22;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="60" y="225" width="620" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="HouseholdMethods" value="+ updateContact(contactName: String,&lt;br&gt;  phoneNumber: String, area: String):&lt;br&gt;  Boolean&lt;br&gt;+ updateMemberCount(memberCount:&lt;br&gt;  Integer): Boolean" style="text;html=1;align=left;verticalAlign=top;spacing=18;fontFamily=Consolas;fontSize=22;whiteSpace=wrap;strokeColor=#284a5f;" vertex="1" parent="1">
+          <mxGeometry x="60" y="405" width="620" height="315" as="geometry" />
+        </mxCell>
+        <mxCell id="AidRequest" value="AidRequest" style="swimlane;html=1;startSize=65;fontSize=30;fontStyle=1;fillColor=#dfedf4;swimlaneFillColor=#f8fbfd;strokeColor=#284a5f;" vertex="1" parent="1">
+          <mxGeometry x="790" y="160" width="620" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="AidRequestAttrs" value="- requestId: String&lt;br&gt;- requestDate: Date&lt;br&gt;- needDescription: String&lt;br&gt;- status: RequestStatus" style="text;html=1;align=left;verticalAlign=top;spacing=18;fontFamily=Consolas;fontSize=22;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="790" y="225" width="620" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="AidRequestMethods" value="+ approve(): Boolean&lt;br&gt;+ reject(): Boolean&lt;br&gt;+ cancel(): Boolean" style="text;html=1;align=left;verticalAlign=top;spacing=18;fontFamily=Consolas;fontSize=22;whiteSpace=wrap;strokeColor=#284a5f;" vertex="1" parent="1">
+          <mxGeometry x="790" y="405" width="620" height="315" as="geometry" />
+        </mxCell>
+        <mxCell id="Distribution" value="Distribution" style="swimlane;html=1;startSize=65;fontSize=30;fontStyle=1;fillColor=#dfedf4;swimlaneFillColor=#f8fbfd;strokeColor=#284a5f;" vertex="1" parent="1">
+          <mxGeometry x="1520" y="160" width="620" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="DistributionAttrs" value="- distributionId: String&lt;br&gt;- scheduledDate: Date&lt;br&gt;- deliveredAt: DateTime [0..1]&lt;br&gt;- status: DistributionStatus" style="text;html=1;align=left;verticalAlign=top;spacing=18;fontFamily=Consolas;fontSize=22;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1520" y="225" width="620" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="DistributionMethods" value="+ addLine(item: AidItem,&lt;br&gt;  quantity: Integer): Boolean&lt;br&gt;+ confirmDelivery(): Boolean&lt;br&gt;+ cancel(): Boolean" style="text;html=1;align=left;verticalAlign=top;spacing=18;fontFamily=Consolas;fontSize=22;whiteSpace=wrap;strokeColor=#284a5f;" vertex="1" parent="1">
+          <mxGeometry x="1520" y="405" width="620" height="315" as="geometry" />
+        </mxCell>
+        <mxCell id="Volunteer" value="Volunteer" style="swimlane;html=1;startSize=65;fontSize=30;fontStyle=1;fillColor=#dfedf4;swimlaneFillColor=#f8fbfd;strokeColor=#284a5f;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1020" width="620" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="VolunteerAttrs" value="- volunteerId: String&lt;br&gt;- fullName: String&lt;br&gt;- phoneNumber: String&lt;br&gt;- isActive: Boolean" style="text;html=1;align=left;verticalAlign=top;spacing=18;fontFamily=Consolas;fontSize=22;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1085" width="620" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="VolunteerMethods" value="+ updateContact(phoneNumber:&lt;br&gt;  String): Boolean&lt;br&gt;+ deactivate(): Void" style="text;html=1;align=left;verticalAlign=top;spacing=18;fontFamily=Consolas;fontSize=22;whiteSpace=wrap;strokeColor=#284a5f;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1265" width="620" height="315" as="geometry" />
+        </mxCell>
+        <mxCell id="AidItem" value="AidItem" style="swimlane;html=1;startSize=65;fontSize=30;fontStyle=1;fillColor=#dfedf4;swimlaneFillColor=#f8fbfd;strokeColor=#284a5f;" vertex="1" parent="1">
+          <mxGeometry x="790" y="1020" width="620" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="AidItemAttrs" value="- itemId: String&lt;br&gt;- itemName: String&lt;br&gt;- unit: String&lt;br&gt;- availableQuantity: Integer" style="text;html=1;align=left;verticalAlign=top;spacing=18;fontFamily=Consolas;fontSize=22;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="790" y="1085" width="620" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="AidItemMethods" value="+ addStock(quantity: Integer): Boolean&lt;br&gt;+ checkAvailability(quantity:&lt;br&gt;  Integer): Boolean" style="text;html=1;align=left;verticalAlign=top;spacing=18;fontFamily=Consolas;fontSize=22;whiteSpace=wrap;strokeColor=#284a5f;" vertex="1" parent="1">
+          <mxGeometry x="790" y="1265" width="620" height="315" as="geometry" />
+        </mxCell>
+        <mxCell id="DistributionLine" value="DistributionLine" style="swimlane;html=1;startSize=65;fontSize=30;fontStyle=1;fillColor=#dfedf4;swimlaneFillColor=#f8fbfd;strokeColor=#284a5f;" vertex="1" parent="1">
+          <mxGeometry x="1520" y="1020" width="620" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="DistributionLineAttrs" value="- lineId: String&lt;br&gt;- quantity: Integer" style="text;html=1;align=left;verticalAlign=top;spacing=18;fontFamily=Consolas;fontSize=22;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1520" y="1085" width="620" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="DistributionLineMethods" value="+ updateQuantity(quantity:&lt;br&gt;  Integer): Boolean" style="text;html=1;align=left;verticalAlign=top;spacing=18;fontFamily=Consolas;fontSize=22;whiteSpace=wrap;strokeColor=#284a5f;" vertex="1" parent="1">
+          <mxGeometry x="1520" y="1265" width="620" height="315" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="submits" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#284a5f;strokeWidth=2;fontSize=22;" edge="1" parent="1" source="Household" target="AidRequest">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e1a" value="1" style="text;html=1;fontSize=26;align=left;" vertex="1" parent="1">
+          <mxGeometry x="690" y="345" width="70" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="e1b" value="0..*" style="text;html=1;fontSize=26;align=left;" vertex="1" parent="1">
+          <mxGeometry x="725" y="400" width="70" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="fulfils" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#284a5f;strokeWidth=2;fontSize=22;" edge="1" parent="1" source="AidRequest" target="Distribution">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2a" value="1" style="text;html=1;fontSize=26;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="345" width="70" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="e2b" value="0..*" style="text;html=1;fontSize=26;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1450" y="400" width="70" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="responsible for" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#284a5f;strokeWidth=2;fontSize=22;" edge="1" parent="1" source="Volunteer" target="Distribution">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="370" y="850" />
+              <mxPoint x="1700" y="850" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3a" value="1" style="text;html=1;fontSize=26;align=left;" vertex="1" parent="1">
+          <mxGeometry x="385" y="975" width="70" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="e3b" value="0..*" style="text;html=1;fontSize=26;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1715" y="740" width="70" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="contains" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#284a5f;strokeWidth=2;fontSize=22;startArrow=diamond;startFill=1;" edge="1" parent="1" source="Distribution" target="DistributionLine">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4a" value="1" style="text;html=1;fontSize=26;align=left;" vertex="1" parent="1">
+          <mxGeometry x="2030" y="765" width="70" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="e4b" value="1..*" style="text;html=1;fontSize=26;align=left;" vertex="1" parent="1">
+          <mxGeometry x="2030" y="975" width="70" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="item" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#284a5f;strokeWidth=2;fontSize=22;" edge="1" parent="1" source="AidItem" target="DistributionLine">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5a" value="1" style="text;html=1;fontSize=26;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="1245" width="70" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="e5b" value="0..*" style="text;html=1;fontSize=26;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1450" y="1300" width="70" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="note0" value="Visibility: - private, + public. Filled diamond: composition / exclusive ownership." style="text;html=1;align=left;fontSize=23;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1630" width="2080" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="note1" value="RequestStatus: Pending | Approved | Rejected | Cancelled" style="text;html=1;align=left;fontSize=23;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1666" width="2080" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="note2" value="DistributionStatus: Planned | Delivered | Cancelled" style="text;html=1;align=left;fontSize=23;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1702" width="2080" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="note3" value="Rules: positive quantities; approved request; active volunteer at assignment; confirm delivery once." style="text;html=1;align=left;fontSize=23;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1738" width="2080" height="36" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
