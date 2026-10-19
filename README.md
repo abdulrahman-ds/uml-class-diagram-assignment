@@ -22,9 +22,3 @@ Both reports are also available as PDF files in `documentation/`. The second rep
 - [Exported UML diagram](diagrams/uml_class_diagram.png)
 - [Editable draw.io diagram](diagrams/uml_class_diagram.drawio)
 - [Handwritten summary guide](documentation/handwritten_summary_guide.md)
-
-## Submission status
-
-The Markdown and PDF reports, editable drawing, PNG export, and handwriting guide are prepared. Student names and IDs, repository publication, Google Form submission, and the handwritten materials remain to be completed. The assignment deadline is 20 October 2026 at 8:30 AM; the assignment does not specify a time zone.
-
-Both students must write the required summary and draw the complete UML diagram by hand for the paper submission. An electronic printout does not replace the hand-drawn diagram.
